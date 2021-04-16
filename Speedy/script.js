@@ -3,11 +3,44 @@ const scoreDash = document.querySelector('.scoreDash');
 const lifeDash = document.querySelector('.lifeDash');
 const container = document.getElementById('container');
 const btnStart = document.querySelector('.btnStart');
+var joy = new JoyStick('joyDiv',{
+
+    // The ID of canvas element
+    title: 'joystick',
+
+    // width/height
+    width: undefined,
+    height: undefined,
+
+    // Internal color of Stick
+    internalFillColor: '#00AA00',
+
+    // Border width of Stick
+    internalLineWidth: 2,
+
+    // Border color of Stick
+    internalStrokeColor: '#003300',
+
+    // External reference circonference width
+    externalLineWidth: 2,
+
+    //External reference circonference color
+    externalStrokeColor: '#008000',
+
+    // Sets the behavior of the stick
+    autoReturnToCenter: true
+    
+});
 btnStart.addEventListener('click', startGame);
 document.addEventListener('keydown', pressKeyOn);
 document.addEventListener('keyup', pressKeyOff);
 var mysong=document.getElementById("mysong");
 //Game Variables
+joy.GetPosX();
+joy.GetPosY();
+joy.GetDir();
+joy.GetX();
+joy.GetY();
 let animationGame;
 let gamePlay = false;
 let player;
