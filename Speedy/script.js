@@ -36,11 +36,6 @@ document.addEventListener('keydown', pressKeyOn);
 document.addEventListener('keyup', pressKeyOff);
 var mysong=document.getElementById("mysong");
 //Game Variables
-joy.GetPosX();
-joy.GetPosY();
-joy.GetDir();
-joy.GetX();
-joy.GetY();
 let animationGame;
 let gamePlay = false;
 let player;
