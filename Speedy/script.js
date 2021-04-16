@@ -99,7 +99,12 @@ class JoystickController
 
     function handleUp(event) 
     {
-        if ( !self.active ) return;
+        keys.ArrowUp = true;
+
+        if ( !self.active ){
+            keys.ArrowUp = false;
+            return;
+        }
 
         // if this is a touch event, make sure it is the right one
         if (event.changedTouches && self.touchId != event.changedTouches[0].identifier) return;
