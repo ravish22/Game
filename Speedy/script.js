@@ -38,10 +38,10 @@ class JoystickController
     function handleDown(event)
     {
         self.active = true;
+        keys.ArrowUp=true;
 
       // all drag movements are instantaneous
       stick.style.transition = '0s';
-
       // touch event fired before mouse event; prevent redundant mouse event from firing
       event.preventDefault();
 
@@ -99,12 +99,9 @@ class JoystickController
 
     function handleUp(event) 
     {
-        keys.ArrowUp = true;
+        keys.ArrowUp=false;
 
-        if ( !self.active ){
-            keys.ArrowUp = false;
-            return;
-        }
+        if ( !self.active ) return;
 
         // if this is a touch event, make sure it is the right one
         if (event.changedTouches && self.touchId != event.changedTouches[0].identifier) return;
